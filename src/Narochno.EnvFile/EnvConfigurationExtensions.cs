@@ -22,5 +22,23 @@ namespace Narochno.EnvFile
 
             return builder;
         }
+
+        public static IConfigurationManager AddEnvFile(
+            this IConfigurationManager manager,
+            string file = ".env"
+        )
+        {
+            if (!Path.IsPathRooted(file))
+            {
+                file = Path.Combine(Directory.GetCurrentDirectory(), file);
+            }
+
+            if (File.Exists(file))
+            {
+                manager.Add(new EnvFileConfigurationSource(file));
+            }
+
+            return manager;
+        }
     }
 }
