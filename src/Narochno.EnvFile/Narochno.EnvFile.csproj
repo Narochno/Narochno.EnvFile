@@ -5,6 +5,7 @@
         <VersionPrefix>1.0.1</VersionPrefix>
         <AssemblyVersion>1.0.1</AssemblyVersion>
         <FileVersion>1.0.1</FileVersion>
+        <PackageIcon>https://avatars.githubusercontent.com/u/24652538</PackageIcon>
         <PackageProjectUrl>https://github.com/Narochno/Narochno.EnvFile</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
