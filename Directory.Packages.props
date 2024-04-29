@@ -1,8 +1,11 @@
 <Project>
   <ItemGroup>
+    <PackageVersion Include="Bullseye" Version="5.0.0" />
+    <PackageVersion Include="Glob" Version="1.1.9" />
     <PackageVersion Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="SimpleExec" Version="12.0.0" />
     <PackageVersion Include="xunit" Version="2.8.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.0" />
   </ItemGroup>

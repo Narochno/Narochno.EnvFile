@@ -4,36 +4,27 @@ using Microsoft.Extensions.Configuration;
 
 namespace Narochno.EnvFile
 {
-    public class EnvFileConfigurationProvider : ConfigurationProvider
+    public class EnvFileConfigurationProvider(string path) : ConfigurationProvider
     {
-        private readonly string _path;
-
-        public EnvFileConfigurationProvider(string path)
-        {
-            _path = path;
-        }
-
         public override void Load()
         {
             Data.Clear();
-           
-            if (!File.Exists(_path))
+
+            if (!File.Exists(path))
             {
-                throw new FileNotFoundException(_path);
+                throw new FileNotFoundException(path);
             }
 
-            using (var reader = File.OpenText(_path))
+            using var reader = File.OpenText(path);
+            string? line;
+            while ((line = reader.ReadLine()) != null)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                var values = line.Split("=", StringSplitOptions.RemoveEmptyEntries);
+                if (values.Length != 2)
                 {
-                    var values = line.Split("=", StringSplitOptions.RemoveEmptyEntries);
-                    if (values.Length != 2)
-                    {
-                        continue;
-                    }
-                    Data.Add(values[0], values[1]);
+                    continue;
                 }
+                Data.Add(values[0], values[1]);
             }
         }
     }

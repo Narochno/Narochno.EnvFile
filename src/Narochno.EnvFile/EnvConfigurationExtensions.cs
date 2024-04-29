@@ -5,7 +5,10 @@ namespace Narochno.EnvFile
 {
     public static class EnvConfigurationExtensions
     {
-        public static IConfigurationBuilder AddEnvFile(this IConfigurationBuilder builder, string file = ".env")
+        public static IConfigurationBuilder AddEnvFile(
+            this IConfigurationBuilder builder,
+            string file = ".env"
+        )
         {
             if (!Path.IsPathRooted(file))
             {

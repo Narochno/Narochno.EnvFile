@@ -2,18 +2,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Narochno.EnvFile
 {
-    public class EnvFileConfigurationSource : IConfigurationSource
+    public class EnvFileConfigurationSource(string path) : IConfigurationSource
     {
-        private readonly string _path;
-
-        public EnvFileConfigurationSource(string path)
-        {
-            _path = path;
-        }
-
-        public IConfigurationProvider Build(IConfigurationBuilder builder)
-        {
-            return new EnvFileConfigurationProvider(_path);    
-        }
+        public IConfigurationProvider Build(IConfigurationBuilder builder) =>
+            new EnvFileConfigurationProvider(path);
     }
 }
