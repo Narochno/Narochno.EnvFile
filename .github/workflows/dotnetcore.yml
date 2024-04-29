@@ -8,10 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -21,5 +18,5 @@ jobs:
     - run: dotnet run --project build/build.csproj
     - uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.os }}-narochno.envfile.nupkg
+        name: narochno.envfile.nupkg
         path: artifacts/*

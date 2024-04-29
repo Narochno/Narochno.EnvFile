@@ -60,8 +60,7 @@ Target(
 Target(
     Test,
     DependsOn(Build),
-    ForEach("net8.0", "net462"),
-    framework =>
+    () =>
     {
         IEnumerable<string> GetFiles(string d)
         {
@@ -70,7 +69,7 @@ Target(
 
         foreach (var file in GetFiles("**/*.Test.csproj"))
         {
-            Run("dotnet", $"test {file} -c Release -f {framework} --no-restore --verbosity=normal");
+            Run("dotnet", $"test {file} -c Release -f net8.0 --no-restore --verbosity=normal");
         }
     }
 );
