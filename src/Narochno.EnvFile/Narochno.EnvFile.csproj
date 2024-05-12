@@ -2,10 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
-        <VersionPrefix>1.0.1</VersionPrefix>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
-        <PackageIcon>https://avatars.githubusercontent.com/u/24652538</PackageIcon>
+        <VersionPrefix>1.1.0</VersionPrefix>
+        <AssemblyVersion>1.1.0</AssemblyVersion>
+        <FileVersion>1.1.0</FileVersion>
         <PackageProjectUrl>https://github.com/Narochno/Narochno.EnvFile</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
