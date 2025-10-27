@@ -16,7 +16,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - run: dotnet run --project build/build.csproj
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: narochno.envfile.nupkg
         path: artifacts/*
